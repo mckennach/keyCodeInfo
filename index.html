@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Find the keycode!</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <main>
+      <h1 class="keycode-readout"></h1>
+      <div class="key-readout-container">
+        <kbd class="key-readout">Begin typing</kbd>
+      </div>
+    </main>
+
+    <script>
+      function findInfo(e) {
+        e.preventDefault();
+        console.log(e);
+        const key = e.keyCode == 32 ? 'Space' : e.key;
+        const keyCode = e.keyCode;
+
+        document.querySelector('.key-readout').innerHTML = key;
+        document.querySelector('.keycode-readout').innerHTML = keyCode;
+      }
+
+      window.addEventListener('keydown', findInfo);
+
+    </script>
+  </body>
+</html>
